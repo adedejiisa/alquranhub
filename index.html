@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al Qur’an Hub Academy</title>
+  <style>
+:root {
+      --green: #2E7D32;
+      --orange: #F57C00;
+      --brown: #6D4C41;
+      --white: #FFFFFF;
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--white);
+      color: var(--brown);
+}
+
+    header {
+      background-color: var(--green);
+      color: var(--white);
+      padding: 20px;
+      text-align: center;
+      padding: 20px;
+    
+}
+
+    h1 {
+      margin: 0;
+}
+
+.navbar {
+  background-color: var(--orange);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: relative;
+  border:none;
+  z-index: 999999;
+}
+.brand {
+  font-size: 24px;
+  font-weight:800;
+  background: linear-gradient(135deg, #2E7D32, var(--brown)); /* or any colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+    section {
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+}
+
+.testimonial {
+      font-style: italic;
+      margin: 10px 0;
+}
+.logo{
+  border-radius: 50%;
+}
+.link:hover{
+  text-decoration: underline;
+text-decoration: underline;
+text-decoration-color:  var(--green);
+}
+.cta{
+  padding: 20px;
+  border-radius: 20px;
+  border: none;
+font-weight: 800;
+font-size:1rem ;
+color:var(--brown);
+background-color: var(--orange);
+}
+.cta:hover{
+  background: #D6C9B8;
+  transform: translateX(-5px);
+}
+.about-h{
+  text-align: center;
+  font-size:2rem;
+  display:block;
+        color: #F57C00; /* Orange */
+
+}
+
+.card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+}
+.course { 
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 20px;
+      list-style: none;
+}
+.course-list{
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      text-align: center;
+      font-weight:700;
+}
+.card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+}
+
+.card p {
+      color: var(--brown)
+}
+
+.testimonials {
+    padding: 40px 20px;
+    border: 2px solid var()--brown);
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.testimonial {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-left: 5px solid var(--brown); /* Green accent */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.testimonial p {
+    font-style: italic;
+    color: var(--brown));
+    margin-bottom: 10px;
+}
+
+.testimonial span {
+    display: block;
+    font-weight: bold;
+    color: #6D4C41; /* Brown */
+    text-align: right;
+}
+
+    .faq-section {
+      max-width: 800px;
+      margin: auto;
+    }
+    .faq{
+       margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+      overflow: hidden;
+     border: 1px solid var(--brown);
+    }
+
+    .faq-question {
+      color: var(--brown);
+    padding: 20px 40px;
+    }
+
+    .faq-question::after {
+      content: '▼';
+      /*position: absolute;*/
+      float:right;
+      font-size: 20px;
+    }
+
+    .faq.active .faq-question::after {
+      content: '▲';
+    }
+    .faq-answer {
+      display: none;
+      padding: 15px 20px;
+      background: #f1f1f1;
+      color:car(--brown)
+}
+  .faq.active .faq-answer{ 
+        display:block;
+}
+#contact {
+  
+  padding: 40px 20px;
+  text-align: center;
+  color: #333;
+  background: var(--orange);
+  border: none;
+
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+#contact a {
+  color: var(--brown);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+.testimonial{
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+/* Hidden state for fade-out */
+.testimonial.fade-out {
+  opacity: 0;
+}
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .carousel-item {
+    flex: 0 0 auto;
+    width: 300px;
+    margin-right: 10px;
+    scroll-snap-align: start;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+  }
+  .carousel-item img {
+    width: 100%;
+    border-radius: 6px;
+  }
+    footer {
+      background-color: var(--brown);
+      color: var(--white);
+      text-align: center;
+      padding: 10px;
+      border: none;
+}
+.typing {
+  font-style: italic;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--white);
+  animation: typing 4s steps(40, end) forwards;
+  width: 0;
+}
+@keyframes typing {
+  to {
+    width: 100%;
+}
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+}
+}
+
+.particle {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+     background-color: #D2B48C;  
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+}
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+}
+      100% {
+        transform: translateY(-100px);
+        opacity: 0;
+}
+}
+.card {
+  transform: translateX(-50px);
+  opacity: 0;
+  animation: slideInLeft 2s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+}
+}
+
+
+.text-rotator {
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+/* Hidden state for fade-out */
+.text-rotator.fade-out {
+  opacity: 0;
+}
+.card:hover {
+    transform: rotateX(-45deg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: var(--orange);
+    width: 100%;
+    display: none;
+    padding: 15px 0px;
+  }
+  nav li{
+    margin-left: 5px;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+  @media (max-width: 600px) {
+  #contact {
+    padding: 30px 15px;
+  }
+
+  #contact h2 {
+    font-size: 1.6rem;
+  }
+
+  #contact p {
+    font-size: 1rem;
+  }
+}
+
+}
+  </style>
+</head>
+<body>
+
+
+<nav class="navbar">
+  <div class="brand ">Al Qur’an Hub Academy</div>
+  <ul class="nav-links">
+    <li class="link"><a href="#">Home</a></li>
+    <li class="link"><a href="#">Courses</a></li>
+    <li class="link"><a href="#">Register</a></li>
+    <li class="link"><a href="#">Login</a></li>
+    <li class="link"><a href="">Events</a></li>
+  </ul>
+  <div class="menu-toggle">☰</div>
+<!-- hamburger -->
+</nav>
+
+  <header>
+    <img src="logo.jpg" alt=" Logo" class="logo" width="30%" height="30%">
+    <h1 class="fade-in">🕌 Al Qur’an Hub Academy</h1>
+    <p id="animatedText" class="text-rotator"> A trusted islamic learning platform committed to helping Muslims of all ages connect deeply with the quran. Our fledible classes are help on WhatsApp and Google Meet, making it for you to learn from anywhere, anytime.
+</p>
+
+   <strong> <p class="typing">"Learn Qur’an. Love Qur’an. Live Qur’an."</p></strong>
+   <a><button type="menu" class="cta"> Join a class today</button></a>
+  </header>
+
+  <section id="about" class="card-grid">
+    <div class="card">
+          <p><strong class="about-h">Mission.</strong> To create a spiritually uplifting space where Muslims can learn the Qur’an with proper guidance and love.</p>
+
+    </div>
+    <div class="card">
+          <p><strong class="about-h">Vision.</strong> To build a community that lives by the Qur’an — with accessible learning, qualified instructors, and consistent support.</p>
+
+    </div>
+  </section>
+
+  <div class="card" style="margin:20px;">
+    <strong class="about-h">Programmes & Courses</strong>
+
+    <ul class="course">
+      <li class="course-list">Qur’an Memorization (Hifdh)</li>
+      <li class="course-list">Revision & Correction Class</li>
+ <li class="course-list"> Tajweed/Arabic Language Class</li>
+      <li class="course-list">Sisters-Only & Kids Sections</li>
+    </ul>
+  </div>
+
+  <section id="testimonials" class="testimonials">
+    <h2 class="about-h">Testimonials</h2>
+    <div class="testimonial-grid">
+      <p id="testimony" class="testimonial">   ❝ Their Qur’an memorization structure made it easy to stay consistent. ❞ by — Yusuf, Ilorin.
+        </
+        </div>
+
+  </section>
+  <div>
+    <h2 class="about-h">Events</h2>
+    <div id="carousel" class="carousel">
+    </div>
+
+  </div>
+
+  <div class="faq-section">
+    <h2 class="about-h">Frequently Asked Questions</h2>
+
+    <div class="faq">
+      <div class="faq-question"> Are classes online?
+</div>
+      <div class="faq-answer">Yes — fully online on WhatsApp & Google Meet. </div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-question">Can beginners join?</div>
+      <div class="faq-answer"> Absolutely. We have beginner-friendly options</div>
+</div>
+  
+    <div class="faq">
+      <div class="faq-question">Is there a fee?
+</div>
+      <div class="faq-answer">Some classes are free; some require affordable payments for tutors.
+</div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-question">Will I get personal correction?
+</div>
+      <div class="faq-answer">Yes, tutors give weekly feedback
+</div>
+    </div>
+    <div class="faq">
+      <div class="faq-question">
+            How do I join?
+      </div>
+      <div class="faq-answer">
+            Contact us through WhatsApp or fill out the registration form
+      </div>
+    </div>
+  </div>
+  <section id="contact">
+    <h2 class="about-h">Contact</h2>
+    <p>📞 <a href="https://wa.me/2347068222628">WhatsApp Chat</a></p>
+    <p>📩 Email: <a href="mailto:alquranhubacademy@gmail.com">alquranhubacademy@gmail.com</a></p>
+    <p>📱 Phone: +234 706 822 2628</p>
+    <p>Our admin is available to answer questions, assist with registration, or guide new students.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Al Qur’an Hub Academy
+  </footer>
+
+  <script>
+const toggle = document.querySelector('.menu-toggle');
+const links = document.querySelector('.nav-links');
+
+toggle.addEventListener('click', () => {
+  links.classList.toggle('active');
+});
+const questions = document.querySelectorAll('.faq-question');
+
+questions.forEach(question => {
+  question.addEventListener('click', () => {
+    const faq = question.parentElement;
+    faq.classList.toggle('active');
+  });
+});
+
+
+for (let i = 0; i < 20; i++) {
+      const particle = document.createElement("div");
+      particle.className = "particle";
+      particle.style.left = Math.random() * window.innerWidth + "px";
+      particle.style.top = Math.random() * window.innerHeight + "px";
+      particle.style.animationDuration = (4 + Math.random() * 2) + "s";
+      document.body.appendChild(particle);
+}
+
+const messages = [
+    "A trusted islamic learning platform committed to helping Muslims of all ages connect deeply with the quran. Our fledible classes are help on WhatsApp and Google Meet, making it for you to learn from anywhere, anytime",
+  " An Online Academy that offers structured and Arabic education, with hundred of students impacted actoss different countries."
+];
+
+let index = 0;
+const textElement = document.getElementById("animatedText");
+
+setInterval(() => {
+  textElement.style.opacity = 0;
+  setTimeout(() => {
+    index = (index + 1) % messages.length;
+    textElement.textContent = messages[index];
+    textElement.style.opacity = 1;
+  }, 500); // match transition duration
+}, 5000); // change every 3 seconds
+
+
+const text = [
+  "❝ Their Qur’an memorization structure made it easy to stay consistent. ❞ by — Yusuf, Ilorin",
+  " ❝ I love how they correct us with kindness. May Allah reward them. ❞ by — Umm Musa, Abuja",
+  "❝ I improved so much in just 3 months. Their style is simple and motivating. ❞ by — Zainab, Lagos"
+];
+
+let inde = 0;
+const testimony = document.getElementById("testimony");
+
+setInterval(() => {
+  testimony.style.opacity = 0;
+  setTimeout(() => {
+    inde = (inde + 1) % text.length;
+    testimony.textContent = text[inde];
+    testimony.style.opacity = 1;
+  }, 500); // match transition duration
+}, 3000); // change every 3 seconds
+
+
+
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    // Only take the first 3 items
+    const items = data.slice( -3);
+
+    const carousel = document.getElementById('carousel');
+
+    items.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'carousel-item';
+
+      div.innerHTML = `
+        <img src="${item.image}" alt="${item.title}">
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+        <p>${item.date}</p>
+      `;
+
+      carousel.appendChild(div);
+    });
+  })
+  .catch(error => console.error('Error loading JSON:', error));
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Qur’an Memorization (Hifdh)",
+    "description": "For all levels; guided memorization, weekly targets, and tutor feedback.",
+    "price": 150
+  },
+  {
+    "title": "Tajweed Class",
+    "description": "Master data analysis, visualization, and machine learning using Python.",
+    "price": 200
+  },
+  {
+    "title": "Arabic Language Class",
+    "description": "Learn Arabic grammar, vocabulary, and conversational basics.",
+    "price": 0
+  },
+  {
+    "title": "Revision & Correction Class",
+    "description":"For students who need structured revision or want to fix previous memorization.",
+    "price":0
+  },
+  {
+    "title":"Sisters-Only & Kids Sections",
+    "description":"Safe, structured, and private classes",
+    "price":0
+  }
+]
+
