@@ -1,39 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Courses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hello</title>
   <style>
-  :root {
-      --green: #2E7D32;
-      --orange: #F57C00;
-      --brown: #6D4C41;
-      --white: #FFFFFF;
-}
-
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--white);
-      margin: 20px;
-      overflow-x: hidden;
-    }
-    h1 {
-      text-align: center;
-      color: var(--brown);
-    }
-.course-container {
+    /* Container for the courses list */
+.courses-container {
   padding: 20px;
   max-width: 420px;
   margin: 0 auto;
   font-family: 'Inter', 'Roboto', sans-serif;
-/* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
-  /*background: var(--green);*/
+ /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
+  background: green;
   min-height: 100vh;
 }
 
 /* Page title */
-.course h3{
+.courses-title {
   text-align: center;
   color: white;
   font-size: 28px;
@@ -43,9 +28,8 @@
 }
 
 /* Individual course card */
-.course{
-  /*background: rgba(255, 255, 255, 0.18);*/
-  background: var(--orange);
+.course-card {
+  background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 20px;
@@ -76,14 +60,14 @@
 }
 
 /* Subtle floating hover animation */
-.course:hover {
+.course-card:hover {
   transform: translateY(-12px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 /* Shine effect on hover */
-.course::before {
+.course-card::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -96,12 +80,12 @@
   pointer-events: none;
 }
 
-.course:hover::before {
+.course-card:hover::before {
   transform: translateX(100%) rotate(35deg);
 }
 
 /* Course title */
-.course h3 {
+.course-card h3 {
   color: white;
   font-size: 22px;
   font-weight: 700;
@@ -110,7 +94,7 @@
 }
 
 /* Description */
-.description {
+.course-card p {
   color: rgba(255, 255, 255, 0.9);
   font-size: 15px;
   line-height: 1.5;
@@ -119,21 +103,21 @@
 }
 
 /* Price */
-.prices{
+.course-price {
   text-align: center;
   font-size: 26px;
   font-weight: 800;
-  color: var(--brown);
+  color: #ffd700;
   margin: 16px 0;
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 /* Enroll button */
-.link {
+.enroll-btn {
   display: block;
   width: 100%;
-  /*background: linear-gradient(45deg, var(--brown), #e52e71);*/
-  background: var(--green);
+  padding: 14px;
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
   color: white;
   font-weight: 700;
   font-size: 16px;
@@ -145,20 +129,19 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  padding: 14px 0px;
 }
 
-.link:hover {
+.enroll-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(255, 107, 0, 0.5);
 }
 
-.link:active {
+.enroll-btn:active {
   transform: translateY(-1px);
 }
 
 /* Ripple effect on button */
-.link::after {
+.enroll-btn::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -172,96 +155,48 @@
   z-index: -1;
 }
 
-.link:active::after {
+.enroll-btn:active::after {
   width: 300px;
   height: 300px;
 }
 
 /* Free course special style */
-.course.free .price {
+.course-card.free .course-price {
   color: #00ff9d;
 }
 
-.course.free .link{
+.course-card.free .enroll-btn {
   background: linear-gradient(45deg, #00c853, #64dd17);
   box-shadow: 0 6px 20px rgba(0, 200, 83, 0.4);
 }
-a{
-  text-decoration: none;
-  text-align: center;
-}
-nav {
-  background-color: #4caf50;
- color: white;
-  padding: 20px 0px;
-  align-items: center; 
-  width: 100%;
-  position: absolute;
-  top:0;
-  left: 0;
-/*  padding-left: 14px;*/
-  display:flex;
-  overflow-x: hidden;
-}
-
-.brand {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #ff9800; 
-  margin-left: 14px;
-}
-.list{
-  float: right;
-  list-style: none;
-  position: absolute;
-  right: 5%;
-  font-size: 2rem;
-}
-
-
   </style>
 </head>
+
 <body>
-<nav class="navbar">
-  <div class="brand ">Al Qur’an Hub Academy</div>
-  <li class="list"><a href="index.html">🏠</a></li>
+  <div class="courses-container">
+  <h1 class="courses-title">Available Courses</h1>
 
-</nav>
-  <h1>Available Courses</h1>
-  <div id="course-container" class="course-container"></div>
+  <div class="course-card">
+    <h3>Qur’an Memorization (Hifdh)</h3>
+    <p>For all levels, guided memorization, weekly targets, and tutor feedback.</p>
+    <div class="course-price">$150.00</div>
+    <button class="enroll-btn">Enroll to Course</button>
+  </div>
 
-  <script>
-    // Load courses from external JSON file
-fetch('courses.json')
-  .then(response => response.json())
-  .then(courses => {
-    const container = document.getElementById('course-container');
+  <div class="course-card">
+    <h3>Tajweed Class</h3>
+    <p>Master data analysis, visualization, and machine learning using Python.</p>
+    <div class="course-price">$200.00</div>
+    <button class="enroll-btn">Enroll to Course</button>
+  </div>
 
-    courses.forEach(course => {
-      const div = document.createElement('div');
-      div.className = 'course fade-in';
-
-      div.innerHTML = `
-        <h3>${course.title}</h3>
-        <p class="description">${course.description}</p>
-        <a class="link" href="https://wa.me/7068222628?text=I%20want%20to%20enrol%20for%20${course.title}%20course">Enroll to course</a>
-      `;
-
-      container.appendChild(div);
-    });
-  })
-  .catch(error => console.error('Error loading courses:', error));
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    // Toggle the 'active' class on the nav-links when the menu-toggle is clicked
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-});
-
-  </script>
+  <div class="course-card free">
+    <h3>Arabic Language Class</h3>
+    <p>Learn Arabic grammar, vocabulary, and conversational basics.</p>
+    <div class="course-price">$0.00</div>
+    <button class="enroll-btn">Enroll to Course</button>
+  </div>
+</div>
 </body>
+
 </html>

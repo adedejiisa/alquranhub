@@ -82,10 +82,15 @@
 .logo{
   border-radius: 50%;
 }
+.link{
+  padding: 10px;
+  border-top: solid 1px var(--brown);
+}
+.link a{
+  display:block;
+}
 .link:hover{
-  text-decoration: underline;
-text-decoration: underline;
-text-decoration-color:  var(--green);
+background:#B67B1E;
 }
 .cta{
   padding: 20px;
@@ -107,7 +112,16 @@ background-color: var(--orange);
         color: #F57C00; /* Orange */
 
 }
-
+@media(min-width:760px){
+  .link{
+      border:none;
+  }
+  .link:hover{
+      text-decoration: underline;
+text-decoration: underline;
+text-decoration-color:  var(--green);
+  }
+}
 .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -274,9 +288,12 @@ background-color: var(--orange);
     padding: 10px;
     text-align: center;
   }
-  .carousel-item img {
-    width: 100%;
-    border-radius: 6px;
+  .carousel-item h3{
+    color: var(--green);
+    font-size: 1.5rem;
+  }
+   .carousel-item{
+    font-weight: 600;
   }
     footer {
       background-color: var(--brown);
@@ -357,7 +374,9 @@ background-color: var(--orange);
     transform: rotateX(-45deg);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-
+a{
+  text-decoration: none;
+}
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
@@ -402,11 +421,11 @@ background-color: var(--orange);
 <nav class="navbar">
   <div class="brand ">Al Qur’an Hub Academy</div>
   <ul class="nav-links">
-    <li class="link"><a href="#">Home</a></li>
-    <li class="link"><a href="#">Courses</a></li>
+    <li class="link"><a href="index.html"> Home</a></li>
+    <li class="link"><a href="course.html">Courses</a></li>
     <li class="link"><a href="#">Register</a></li>
-    <li class="link"><a href="#">Login</a></li>
-    <li class="link"><a href="">Events</a></li>
+    <li class="link"><a href="login.php">Login</a></li>
+    <li class="link"><a href="event.html">Events</a></li>
   </ul>
   <div class="menu-toggle">☰</div>
 <!-- hamburger -->
@@ -419,7 +438,7 @@ background-color: var(--orange);
 </p>
 
    <strong> <p class="typing">"Learn Qur’an. Love Qur’an. Live Qur’an."</p></strong>
-   <a><button type="menu" class="cta"> Join a class today</button></a>
+   <a href="course.html"><button type="menu" class="cta"> Join a class today</button></a>
   </header>
 
   <section id="about" class="card-grid">
@@ -434,7 +453,7 @@ background-color: var(--orange);
   </section>
 
   <div class="card" style="margin:20px;">
-    <strong class="about-h">Programmes & Courses</strong>
+    <strong class="about-h"><a class="about-h" href="course.html">Programmes & Courses</a></strong>
 
     <ul class="course">
       <li class="course-list">Qur’an Memorization (Hifdh)</li>
@@ -453,7 +472,7 @@ background-color: var(--orange);
 
   </section>
   <div>
-    <h2 class="about-h">Events</h2>
+    <h2 class="about-h"><a href="event.html" class="about-h">Events</a></h2>
     <div id="carousel" class="carousel">
     </div>
 
@@ -584,10 +603,8 @@ fetch('data.json')
       div.className = 'carousel-item';
 
       div.innerHTML = `
-        <img src="${item.image}" alt="${item.title}">
         <h3>${item.title}</h3>
         <p>${item.description}</p>
-        <p>${item.date}</p>
       `;
 
       carousel.appendChild(div);
